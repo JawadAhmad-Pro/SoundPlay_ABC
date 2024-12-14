@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first Page</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body , html{
+    background-color: #807a82;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;  
+}
+
+#pressBtn{
+    height: 50px;
+    width: 200px;
+    background-color: #807a82;
+    color: white;
+    border: 1px solid white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pressBtn:hover{
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);  
+    color: rgb(210, 214, 218);
+}
+
+h2{
+    font-size: 45px;
+    color: #023e8a;
+    margin-top: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.slide-out {
+    animation: slideOut 3s forwards;
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <button id="pressBtn">START</button>
+    <h2 id="text">Press button to hear the sound of the word</h2>
+
+    <!-- JS -->
+     <script>
+        const button = document.getElementById('pressBtn');
+        button.addEventListener('click', () =>{
+            document.body.classList.add('slide-out');
+            setTimeout(() => {
+                 window.location.href = '2index.html'
+            }, 3000);
+        })
+
+     </script>
+</body>
+</html>
